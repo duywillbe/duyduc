@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --primnary-color: #0f1b4c;
+}
+html{
+font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    font-family:'Poppins';
+}
+
+/* common thành phần dùng chung */
+a{
+    text-decoration: none;
+}
+.content {
+    width: 1110px; /* Độ rộng giới hạn của tất cả phần tử */
+    max-width: calc(100% - 48px); /*căn lề hai bên -> 100% thì sát lề nên trừ đi bên trái + phải mỗi bên 24px là 100%-24px */
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.btn{ /* xem tổng thể cả trang xem có tương tự như nhau thì CSS 1 cái để dùng lại, */
+    min-width: 98px;
+    background-color: var(--primnary-color);
+    border-radius: 8px;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 18px 16px;
+}
+/* -------header ----*/
+.header{
+    background-color: #E6F0FF;
+    height: 100vh;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+
+}
+.navbar ul{
+    display: flex;
+    margin-left: 50px;
+}
+.navbar .actions{
+    margin-left: auto;
+}
+.navbar ul a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #4F5361;
+    padding: 8px 1.4rem;   /*padding:(trên dưới)px (trái phải)px;*/
+}
+
+.navbar .actions .actions-link{
+    color: var(--primnary-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-right: 18px;
+}
+/*----------------hero--------*/
+.hero{
+    margin-top: 130px;
+    width: 51%; /* 559px:1110px*100(width của thẻ content) */
+}
+.hero .sub-title{
+    color: #687690;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+.hero .title{
+    margin-top: 8px;
+    color: #000336;
+    font-size: 6.2rem;
+    font-weight: 700;
+    line-height: 76px; /* 118.75% */
+}
+.hero .desc{
+    margin-top: 30px;
+    color: #5A6473;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 177.778% */
+}
+
+.hero-cta{
+    margin-top: 40px;
+    min-width: 170px;
+}
