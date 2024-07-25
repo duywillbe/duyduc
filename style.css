@@ -21,12 +21,11 @@ a{
     max-width: calc(100% - 48px); /*căn lề hai bên -> 100% thì sát lề nên trừ đi bên trái + phải mỗi bên 24px là 100%-24px */
     margin-left: auto;
     margin-right: auto;
-
 }
 .btn{ /* xem tổng thể cả trang xem có tương tự như nhau thì CSS 1 cái để dùng lại, */
     min-width: 98px;
     background-color: var(--primnary-color);
-    border-radius: 8px;
+    border-radius: 12px;
     color: #FFF;
     text-align: center;
     font-size: 1.4rem;
@@ -34,10 +33,50 @@ a{
     display: inline-block;
     padding: 18px 16px;
 }
-/* -------header ----*/
+
+/*  animation */ /*  animation */ /*  animation *//*  animation *//*  animation *//*  animation */
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn:after{
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 18px;
+    /*right: -70px;*/
+    right: -10px;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    padding-right: 30px;
+    padding-left:10px;
+}
+
+.btn:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+
+/*  animation */ /*  animation */ /*  animation *//*  animation *//*  animation *//*  animation */
+.line-clamp{
+    /* khi nội dung dài xuất hiện dầu 3 chấm */
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 2);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/*=========================================== header =============================*/
 .header{
+    position: relative;
     background-color: #E6F0FF;
     height: 100vh;
+    max-height: 736px;
 }
 .navbar{
     display: flex;
@@ -65,7 +104,7 @@ a{
     font-weight: 500;
     margin-right: 18px;
 }
-/*----------------hero--------*/
+/*=========================================== hero =============================*/
 .hero{
     margin-top: 130px;
     width: 51%; /* 559px:1110px*100(width của thẻ content) */
@@ -96,3 +135,352 @@ a{
     margin-top: 40px;
     min-width: 170px;
 }
+.hero-img{
+    position: absolute;
+    right:calc((100vw - 1110px) / 2 - 100px); /* calc để đến lúc phóng to thu nh màn hình ăn theo kích thước  */
+    bottom:0;
+
+}
+/*=========================================== client =============================*/
+.client{
+    margin-top: 79px;
+    padding: 43px 0 64px;
+}
+
+.client .row{
+    display: flex;
+    justify-content: space-between;
+}
+.client .row .description{
+    color: #7D8589;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25; /* 125% */
+}
+.client .row-desc{
+    margin-top: 23px;
+}
+.client .images{
+    margin-top: 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*====GUIDES =====*/
+.guides{
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+.guides h2{
+    position: relative;
+    color: #000339;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1; /* 100% */
+}
+.guides h2::before{
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    content:"";
+    display: inline-block;
+    width: 41px;
+    height: 4px;
+    background: #000339;
+    border-radius: 12px;
+}
+.guides p{
+    width: 459px;
+    max-width: 100%;
+    margin: 20px auto 0; /*trên trái-phải dưới*/
+    color: #5A6473;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.88; /* 187.5% */
+}
+
+.guides .list-guides{
+    display:flex;
+    margin-top: 70px;
+    justify-content: center;
+}
+
+.guide-item{
+    margin: 0 70px; /*trên-dưới trái-phải*/
+    text-align: center;
+}
+
+.guide-item .title{
+    margin-top: 26px;
+    color: #3B3C45;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.1; /* 110% */
+}
+.guide-item .link{
+    display: inline-block;
+    margin-top: 10px;
+    color: #0689FF;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 600;
+}
+.guide-item .arrow{
+    margin-left:6px;
+}
+.guide-cta { display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.guide-cta button{
+    min-width: 170px;
+    border-radius: 8px;
+}
+/*=========================================== featured =============================*/
+.featured{
+    margin-top: 41px;
+    padding: 110px 0;
+    background-color: #F5FAFE;
+}
+
+.featured .sub-title{
+    color: #000339;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1; /* 100% */
+}
+.featured .desc{
+    color: #5A6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.88; /* 187.5% */
+}
+.featured .link{
+    color: #0689FF;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: normal;
+}
+.featured .content .row{
+    display: flex;
+    justify-content: space-between;
+}
+.featured .content .list .title{
+    color: #000339;
+    font-size: 2.0rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 100% */
+}
+.featured .list {
+    display: flex;
+    margin-top: 70px;
+    gap: 30px; /* viết vào thẻ cha do các thẻ con cách nhau */
+}
+.featured .item{
+    border-radius: 12px;
+    flex: 1;
+    background: #ffffff;
+}
+
+.featured .item .thumb{
+    width: 100%;
+    height: 227px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden; /* ẩn phần tử nằm ngoài phạm vi element */
+}
+.featured .item .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*  giữ tỉ lệ ảnh không bị méo sau khi fix cứng height 227px */
+    transition: 0.3s;
+}
+.featured .item .thumb:hover img{
+    scale: 1.25;
+}
+.featured .item .body{
+    padding:17px 20px 24px;
+}
+.featured .item .desc{
+    margin-top: 11px;
+    color: #A3A6AB;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    /* khi nội dung dài xuất hiện dầu 3 chấm */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.featured .item .info{
+    display: flex;
+    align-items: center;
+    margin-top: 19px;
+}
+.featured .item .label{
+    margin-left: 8px;
+    color: #4D4D52;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1; /* 100% */
+    letter-spacing: 0.14px;
+}
+.featured .item .icon:first-child{  /* first child là tác động đến phần tử đầu tiên*/
+    margin-left: 0;
+}
+.featured .item .icon{
+    margin-left: 23px;
+}
+.featured .item .body .title a{
+    color: #000339;
+    font-size: 2.0rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1; /* 100% */
+}
+/*=========================================== stats =============================*/
+.stats{
+    margin-top: 75px;
+    padding: 50px 0; /* trên dưới tría phải */
+}
+
+.stats .row{
+    display: flex;
+}
+
+.stats .img-block, .stats .info{
+    width: 50%;
+}
+
+.stats .img-block{
+    position: relative;
+}
+.stats-trend{
+    padding: 45px 22px 40px;
+    top:0;
+    left:0;
+    position: absolute;
+    /*background-color: #FFFF;*/
+    background-color: #F5FAFE;
+    width: 239px;
+    border-bottom-left-radius:12px;
+    border-bottom-right-radius:12px;
+}
+.stats-trend .value{
+    color: #000339;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+}
+.stats-trend .icon{
+    margin-left: auto;
+}
+.stats-trend .desc{
+    margin-top: 8px;
+    color: #5A6473;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; /* 150% */
+}
+
+.stats .img-block .leftgirl{
+    display: block;
+    margin-left: auto;
+    width: 400px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.stats .info{
+    padding: 79px 0 0 165px;
+}
+
+.stats .sub-title{
+    position: relative;
+    width: 269px;
+    color: #000339;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 45px; /* 128.571% */
+}
+
+.stats .sub-title::before{
+    position: absolute;
+    left: 0;
+    top: -10px;
+    content:"";
+    display: block;
+    width: 41px;
+    height: 4px;
+    background: #000339;
+    border-radius:12px ;
+}
+
+.stats .info .desc{
+    margin-top: 20px;
+    width: 309px;
+    color: #A7A7A7;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.7; /* 187.5% */
+}
+
+.stats-trend .separate{
+    margin-top: 25px;
+    width: 100%;
+    height: 2px;
+    background: #727070;
+}
+
+.stats-trend .avatar-block{
+    flex-wrap: wrap; /* ảnh xuống hàng khi nào chạm ranh giới của thẻ DIV */
+    column-gap:14px;
+    row-gap:16px;
+    display: flex;
+    margin-top: 26px;
+}
+.stats .avatar-block .avatar-group {
+    display: flex;
+}
+.stats .avatar-block .avatar-group .avatar{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: -3px;
+}
+.stats .qty {
+    color: #000;
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 600;
+}
+.stats p{
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+    color: #7B8087;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.stats .row-qty{
+    margin-top: 110px;
+    justify-content: space-between;
+}
+
+
+
+
